@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { heroku, tracks } from "./config/apiUrl";
+import { heroku, chart } from "./config/apiUrl";
 
 const Context = React.createContext();
 
@@ -26,7 +26,7 @@ export class Provider extends Component {
 
   componentDidMount() {
     axios
-      .get(`${heroku}${tracks}${process.env.REACT_APP_MM_KEY}`)
+      .get(`${heroku}${chart}${process.env.REACT_APP_MM_KEY}`)
       .then(res => {
         // console.log(res.data);
         this.setState({ track_list: res.data.message.body.track_list });
