@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { Component, createContext } from "react";
 import axios from "axios";
 import { heroku, chart } from "./config/apiUrl";
 
-const Context = React.createContext();
+const Context = createContext();
 
 const reducer = (state, action) => {
   switch (action.type) {
